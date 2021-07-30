@@ -30,8 +30,8 @@ func printFunc(futureSrc chan string) chan []string {
 			if strings.HasPrefix(line, "func ") {
 				result = append(result, line)
 			}
-
 		}
+		promise <- result
 	}()
 	return promise
 
